@@ -10,6 +10,7 @@ ativo: boolean;
 erro: string | null;
 nivelDb: number;
 ultimaSimilaridade: number | null;
+ultimoChroma: number[] | null;
 }
 
 interface Opcoes {
@@ -18,7 +19,13 @@ pitchClassesAlvo?: number[];
 }
 
 export function useMicrofone(opcoes: Opcoes = {}) {
-const [estado, setEstado] = useState<EstadoMicrofone>({ ativo: false, erro: null, nivelDb: -100, ultimaSimilaridade: null });
+const [estado, setEstado] = useState<EstadoMicrofone>({
+ativo: false,
+erro: null,
+nivelDb: -100,
+ultimaSimilaridade: null,
+ultimoChroma: null,
+});
 const [leituraAfinador, setLeituraAfinador] = useState<LeituraAfinador>({ f0: null, midi: null, cents: null, confianca: 0 });
 
 const audioCtxRef = useRef<AudioContext | null>(null);
@@ -71,7 +78,7 @@ analyserRef.current = analyser;
 detectorOnsetRef.current.reset();
 ultimoFrameMsRef.current = performance.now();
 capturaChromaEmMsRef.current = null;
-setEstado({ ativo: true, erro: null, nivelDb: -100, ultimaSimilaridade: null });
+setEstado({ ativo: true, erro: null, nivelDb: -100, ultimaSimilaridade: null, ultimoChroma: null });
 
 const freqData = new Float32Array(analyser.frequencyBinCount);
 const timeData = new Float32Array(analyser.fftSize);
@@ -106,7 +113,7 @@ const alvo = opcoesRef.current.pitchClassesAlvo ?? [];
 if (alvo.length) {
 const chromaVec = chromaDoEspectro(magnitudes, ctxAtual.sampleRate, analyserAtual.fftSize);
 const sim = similaridadeComAlvo(chromaVec, alvo);
-setEstado((s) => ({ ...s, ultimaSimilaridade: sim }));
+setEstado((s) => ({ ...s, ultimaSimilaridade: sim, ultimoChroma: chromaVec }));
 opcoesRef.current.onOnset?.(sim);
 }
 }
@@ -126,6 +133,7 @@ ativo: false,
 erro: e instanceof Error ? e.message : "Não foi possível acessar o microfone.",
 nivelDb: -100,
 ultimaSimilaridade: null,
+ultimoChroma: null,
 });
 }
 }, []);
