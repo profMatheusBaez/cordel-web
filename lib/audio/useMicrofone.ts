@@ -9,6 +9,7 @@ export interface EstadoMicrofone {
 ativo: boolean;
 erro: string | null;
 nivelDb: number;
+ultimaSimilaridade: number | null;
 }
 
 interface Opcoes {
@@ -17,7 +18,7 @@ pitchClassesAlvo?: number[];
 }
 
 export function useMicrofone(opcoes: Opcoes = {}) {
-const [estado, setEstado] = useState<EstadoMicrofone>({ ativo: false, erro: null, nivelDb: -100 });
+const [estado, setEstado] = useState<EstadoMicrofone>({ ativo: false, erro: null, nivelDb: -100, ultimaSimilaridade: null });
 const [leituraAfinador, setLeituraAfinador] = useState<LeituraAfinador>({ f0: null, midi: null, cents: null, confianca: 0 });
 
 const audioCtxRef = useRef<AudioContext | null>(null);
@@ -47,6 +48,17 @@ const stream = await navigator.mediaDevices.getUserMedia({
 audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false },
 });
 streamRef.current = stream;
+const trackAudio = stream.getAudioTracks()[0];
+if (trackAudio && typeof trackAudio.applyConstraints === "function") {
+try {
+await trackAudio.applyConstraints({
+echoCancellation: false,
+noiseSuppression: false,
+autoGainControl: false,
+} as MediaTrackConstraints);
+} catch {
+}
+}
 const AudioContextCtor = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
 const ctx = new AudioContextCtor();
 audioCtxRef.current = ctx;
@@ -59,7 +71,7 @@ analyserRef.current = analyser;
 detectorOnsetRef.current.reset();
 ultimoFrameMsRef.current = performance.now();
 capturaChromaEmMsRef.current = null;
-setEstado({ ativo: true, erro: null, nivelDb: -100 });
+setEstado({ ativo: true, erro: null, nivelDb: -100, ultimaSimilaridade: null });
 
 const freqData = new Float32Array(analyser.frequencyBinCount);
 const timeData = new Float32Array(analyser.fftSize);
@@ -90,11 +102,12 @@ capturaChromaEmMsRef.current = agora + ATRASO_CAPTURA_CHROMA_MS;
 }
 if (capturaChromaEmMsRef.current !== null && agora >= capturaChromaEmMsRef.current) {
 capturaChromaEmMsRef.current = null;
-if (opcoesRef.current.onOnset) {
-const chromaVec = chromaDoEspectro(magnitudes, ctxAtual.sampleRate, analyserAtual.fftSize);
 const alvo = opcoesRef.current.pitchClassesAlvo ?? [];
-const sim = alvo.length ? similaridadeComAlvo(chromaVec, alvo) : 0;
-opcoesRef.current.onOnset(sim);
+if (alvo.length) {
+const chromaVec = chromaDoEspectro(magnitudes, ctxAtual.sampleRate, analyserAtual.fftSize);
+const sim = similaridadeComAlvo(chromaVec, alvo);
+setEstado((s) => ({ ...s, ultimaSimilaridade: sim }));
+opcoesRef.current.onOnset?.(sim);
 }
 }
 
@@ -108,7 +121,12 @@ rafRef.current = requestAnimationFrame(loop);
 };
 rafRef.current = requestAnimationFrame(loop);
 } catch (e) {
-setEstado({ ativo: false, erro: e instanceof Error ? e.message : "Não foi possível acessar o microfone.", nivelDb: -100 });
+setEstado({
+ativo: false,
+erro: e instanceof Error ? e.message : "Não foi possível acessar o microfone.",
+nivelDb: -100,
+ultimaSimilaridade: null,
+});
 }
 }, []);
 
