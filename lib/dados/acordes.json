@@ -1,0 +1,222 @@
+{
+  "Em7": {
+    "nome": "Mi menor com sétima", "simbolo": "Em7",
+    "posicoes": [{"dedo": 2, "corda": 5, "casa": 2}],
+    "soltas": [6, 4, 3, 2, 1], "abafadas": [],
+    "modulo": 2, "dificuldade": 1,
+    "dicas": ["Um dedo só: indicador... digo, médio na corda 5, casa 2.", "Todas as outras cordas soltas soam limpas."]
+  },
+  "Em": {
+    "nome": "Mi menor", "simbolo": "Em",
+    "posicoes": [{"dedo": 2, "corda": 5, "casa": 2}, {"dedo": 3, "corda": 4, "casa": 2}],
+    "soltas": [6, 3, 2, 1], "abafadas": [],
+    "modulo": 2, "dificuldade": 1,
+    "dicas": ["Apoie na ponta dos dedos, unhas curtas, para não encostar na corda 3.", "O polegar fica atrás do braço, mais ou menos na altura do dedo 2."]
+  },
+  "Asus2": {
+    "nome": "Lá suspenso por segunda", "simbolo": "Asus2",
+    "posicoes": [{"dedo": 1, "corda": 3, "casa": 2}, {"dedo": 2, "corda": 4, "casa": 2}],
+    "soltas": [5, 2, 1], "abafadas": [6],
+    "modulo": 2, "dificuldade": 1,
+    "dicas": ["Mesma casa nas cordas 4 e 3 — os dedos ficam lado a lado.", "Abafe a corda 6 encostando o polegar de leve."]
+  },
+  "A7": {
+    "nome": "Lá com sétima", "simbolo": "A7",
+    "posicoes": [{"dedo": 2, "corda": 4, "casa": 2}, {"dedo": 3, "corda": 2, "casa": 2}],
+    "soltas": [5, 3, 1], "abafadas": [6],
+    "modulo": 2, "dificuldade": 1,
+    "dicas": ["Os dois dedos ficam em casas 'opostas', com a corda 3 solta no meio."]
+  },
+  "Dsus2": {
+    "nome": "Ré suspenso por segunda", "simbolo": "Dsus2",
+    "posicoes": [{"dedo": 1, "corda": 3, "casa": 2}, {"dedo": 2, "corda": 2, "casa": 3}],
+    "soltas": [4, 1], "abafadas": [6, 5],
+    "modulo": 2, "dificuldade": 1,
+    "dicas": ["Cordas 6 e 5 não entram nesse acorde — cuidado ao tocar."]
+  },
+  "Am7": {
+    "nome": "Lá menor com sétima", "simbolo": "Am7",
+    "posicoes": [{"dedo": 2, "corda": 4, "casa": 2}, {"dedo": 1, "corda": 2, "casa": 1}],
+    "soltas": [5, 3, 1], "abafadas": [6],
+    "modulo": 2, "dificuldade": 1,
+    "dicas": ["Mais leve que o Am: só dois dedos."]
+  },
+  "Am": {
+    "nome": "Lá menor", "simbolo": "Am",
+    "posicoes": [{"dedo": 1, "corda": 2, "casa": 1}, {"dedo": 2, "corda": 4, "casa": 2}, {"dedo": 3, "corda": 3, "casa": 2}],
+    "soltas": [5, 1], "abafadas": [6],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["É o formato do Em deslocado uma corda para a direita.", "Corda 6 não soa — treine abafar com a lateral do polegar."]
+  },
+  "Dm": {
+    "nome": "Ré menor", "simbolo": "Dm",
+    "posicoes": [{"dedo": 1, "corda": 1, "casa": 1}, {"dedo": 2, "corda": 3, "casa": 2}, {"dedo": 3, "corda": 2, "casa": 3}],
+    "soltas": [4], "abafadas": [6, 5],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["Cordas 6 e 5 abafadas — o baixo é a corda 4 solta."]
+  },
+  "E": {
+    "nome": "Mi maior", "simbolo": "E",
+    "posicoes": [{"dedo": 1, "corda": 3, "casa": 1}, {"dedo": 2, "corda": 5, "casa": 2}, {"dedo": 3, "corda": 4, "casa": 2}],
+    "soltas": [6, 2, 1], "abafadas": [],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["É o Em mais um dedo (indicador) na corda 3, casa 1."]
+  },
+  "A": {
+    "nome": "Lá maior", "simbolo": "A",
+    "posicoes": [{"dedo": 1, "corda": 4, "casa": 2}, {"dedo": 2, "corda": 3, "casa": 2}, {"dedo": 3, "corda": 2, "casa": 2}],
+    "soltas": [5, 1], "abafadas": [6],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["Três dedos espremidos na mesma casa — use a ponta dos dedos, bem verticais."]
+  },
+  "D": {
+    "nome": "Ré maior", "simbolo": "D",
+    "posicoes": [{"dedo": 1, "corda": 3, "casa": 2}, {"dedo": 2, "corda": 1, "casa": 2}, {"dedo": 3, "corda": 2, "casa": 3}],
+    "soltas": [4], "abafadas": [6, 5],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["Forma triangular — o dedo 3 fica um pouco mais alto que os outros dois."]
+  },
+  "C": {
+    "nome": "Dó maior", "simbolo": "C",
+    "posicoes": [{"dedo": 3, "corda": 5, "casa": 3}, {"dedo": 2, "corda": 4, "casa": 2}, {"dedo": 1, "corda": 2, "casa": 1}],
+    "soltas": [3, 1], "abafadas": [6],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["Dedo 3 estica até a casa 3 na corda 5 — é o baixo do acorde.", "Cuidado para o dedo 3 não abafar a corda 3 solta."]
+  },
+  "G": {
+    "nome": "Sol maior", "simbolo": "G",
+    "posicoes": [{"dedo": 3, "corda": 6, "casa": 3}, {"dedo": 2, "corda": 5, "casa": 2}, {"dedo": 4, "corda": 1, "casa": 3}],
+    "soltas": [4, 3, 2], "abafadas": [],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["Usa o mínimo (dedo 4) na corda 1 — treine esse dedo à parte se ele resistir."]
+  },
+  "G7": {
+    "nome": "Sol com sétima", "simbolo": "G7",
+    "posicoes": [{"dedo": 3, "corda": 6, "casa": 3}, {"dedo": 2, "corda": 5, "casa": 2}, {"dedo": 1, "corda": 1, "casa": 1}],
+    "soltas": [4, 3, 2], "abafadas": [],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["Troque o dedo 4 do G pelo indicador na corda 1, casa 1."]
+  },
+  "D7": {
+    "nome": "Ré com sétima", "simbolo": "D7",
+    "posicoes": [{"dedo": 1, "corda": 2, "casa": 1}, {"dedo": 2, "corda": 3, "casa": 2}, {"dedo": 3, "corda": 1, "casa": 2}],
+    "soltas": [4], "abafadas": [6, 5],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["Parecido com o D, mas o dedo 2 solta a corda 2."]
+  },
+  "E7": {
+    "nome": "Mi com sétima", "simbolo": "E7",
+    "posicoes": [{"dedo": 2, "corda": 5, "casa": 2}, {"dedo": 1, "corda": 3, "casa": 1}],
+    "soltas": [6, 4, 2, 1], "abafadas": [],
+    "modulo": 3, "dificuldade": 2,
+    "dicas": ["É o E tirando o dedo 3 — mais leve, mesma base."]
+  },
+  "Fmaj7": {
+    "nome": "Fá com sétima maior", "simbolo": "Fmaj7",
+    "posicoes": [{"dedo": 3, "corda": 4, "casa": 3}, {"dedo": 2, "corda": 3, "casa": 2}, {"dedo": 1, "corda": 2, "casa": 1}],
+    "soltas": [1], "abafadas": [6, 5],
+    "modulo": 6, "dificuldade": 2,
+    "dicas": ["Este é o 'F fácil' — nenhuma pestana, mesmo som de F em progressões."]
+  },
+  "F_mini": {
+    "nome": "Fá mini-pestana", "simbolo": "F(mini)",
+    "posicoes": [
+      {"dedo": 1, "corda": 2, "casa": 1, "pestana": true, "cordas_pestana": [2, 1]},
+      {"dedo": 1, "corda": 1, "casa": 1, "pestana": true, "cordas_pestana": [2, 1]},
+      {"dedo": 2, "corda": 3, "casa": 2},
+      {"dedo": 3, "corda": 4, "casa": 3}
+    ],
+    "soltas": [], "abafadas": [6, 5],
+    "modulo": 7, "dificuldade": 3,
+    "dicas": ["Pestana pequena: só as cordas 1 e 2 sob o indicador.", "É o primeiro passo antes da pestana completa do F."]
+  },
+  "F": {
+    "nome": "Fá maior", "simbolo": "F",
+    "posicoes": [
+      {"dedo": 1, "corda": 6, "casa": 1, "pestana": true, "cordas_pestana": [6, 5, 4, 3, 2, 1]},
+      {"dedo": 1, "corda": 2, "casa": 1, "pestana": true, "cordas_pestana": [6, 5, 4, 3, 2, 1]},
+      {"dedo": 1, "corda": 1, "casa": 1, "pestana": true, "cordas_pestana": [6, 5, 4, 3, 2, 1]},
+      {"dedo": 3, "corda": 5, "casa": 3},
+      {"dedo": 4, "corda": 4, "casa": 3},
+      {"dedo": 2, "corda": 3, "casa": 2}
+    ],
+    "soltas": [], "abafadas": [],
+    "modulo": 7, "dificuldade": 4,
+    "dicas": ["Gire o indicador levemente para o lado do osso, não a polpa cheia.", "Desça o polegar atrás do braço — ele empurra a pestana para frente."]
+  },
+  "Bm": {
+    "nome": "Si menor", "simbolo": "Bm",
+    "posicoes": [
+      {"dedo": 1, "corda": 5, "casa": 2, "pestana": true, "cordas_pestana": [5, 4, 3, 2, 1]},
+      {"dedo": 1, "corda": 1, "casa": 2, "pestana": true, "cordas_pestana": [5, 4, 3, 2, 1]},
+      {"dedo": 3, "corda": 4, "casa": 4},
+      {"dedo": 4, "corda": 3, "casa": 4},
+      {"dedo": 2, "corda": 2, "casa": 3}
+    ],
+    "soltas": [], "abafadas": [6],
+    "modulo": 7, "dificuldade": 5,
+    "dicas": ["É o Am com pestana na casa 2 — mesmo desenho, dois trastes acima."]
+  },
+  "B7": {
+    "nome": "Si com sétima", "simbolo": "B7",
+    "posicoes": [{"dedo": 2, "corda": 5, "casa": 2}, {"dedo": 1, "corda": 4, "casa": 1}, {"dedo": 3, "corda": 3, "casa": 2}, {"dedo": 4, "corda": 1, "casa": 2}],
+    "soltas": [2], "abafadas": [6],
+    "modulo": 8, "dificuldade": 3,
+    "dicas": ["Útil no blues em Lá — resolve para o E7."]
+  },
+  "Bb": {
+    "nome": "Si bemol maior", "simbolo": "Bb",
+    "posicoes": [
+      {"dedo": 1, "corda": 5, "casa": 1, "pestana": true, "cordas_pestana": [5, 1]},
+      {"dedo": 1, "corda": 1, "casa": 1, "pestana": true, "cordas_pestana": [5, 1]},
+      {"dedo": 2, "corda": 2, "casa": 3},
+      {"dedo": 3, "corda": 3, "casa": 3},
+      {"dedo": 4, "corda": 4, "casa": 3}
+    ],
+    "soltas": [], "abafadas": [6],
+    "modulo": 7, "dificuldade": 4,
+    "dicas": ["Mesmo formato do A, mas com pestana na casa 1 — forma A-shape móvel."]
+  },
+  "Cadd9": {
+    "nome": "Dó com nona adicionada", "simbolo": "Cadd9",
+    "posicoes": [{"dedo": 3, "corda": 5, "casa": 3}, {"dedo": 2, "corda": 4, "casa": 2}, {"dedo": 4, "corda": 2, "casa": 3}],
+    "soltas": [3, 1], "abafadas": [6],
+    "modulo": 8, "dificuldade": 2,
+    "dicas": ["Variação colorida do C — bom para dedilhado."]
+  },
+  "Em/G": {
+    "nome": "Mi menor com baixo em Sol", "simbolo": "Em/G",
+    "posicoes": [{"dedo": 3, "corda": 6, "casa": 3}],
+    "soltas": [3, 2, 1], "abafadas": [5, 4],
+    "modulo": 8, "dificuldade": 2,
+    "dicas": ["O mesmo Em, mas com o baixo em Sol para dar um passo suave na progressão."]
+  },
+  "Cmaj7": {
+    "nome": "Dó com sétima maior", "simbolo": "Cmaj7",
+    "posicoes": [{"dedo": 3, "corda": 5, "casa": 3}, {"dedo": 2, "corda": 4, "casa": 2}],
+    "soltas": [3, 2, 1], "abafadas": [6],
+    "modulo": 8, "dificuldade": 2,
+    "dicas": ["O C sem o dedo 1 — mais aberto e suave."]
+  },
+  "C7": {
+    "nome": "Dó com sétima", "simbolo": "C7",
+    "posicoes": [{"dedo": 3, "corda": 5, "casa": 3}, {"dedo": 2, "corda": 4, "casa": 2}, {"dedo": 4, "corda": 3, "casa": 3}, {"dedo": 1, "corda": 2, "casa": 1}],
+    "soltas": [1], "abafadas": [6],
+    "modulo": 8, "dificuldade": 3,
+    "dicas": ["Adiciona o dedo 4 na corda 3 em relação ao C comum."]
+  },
+  "Gsus4": {
+    "nome": "Sol suspenso por quarta", "simbolo": "Gsus4",
+    "posicoes": [{"dedo": 3, "corda": 6, "casa": 3}, {"dedo": 1, "corda": 2, "casa": 1}, {"dedo": 4, "corda": 1, "casa": 3}],
+    "soltas": [4, 3], "abafadas": [5],
+    "modulo": 8, "dificuldade": 1,
+    "dicas": ["Variação do G para levadas de valsa."]
+  },
+  "Dsus4": {
+    "nome": "Ré suspenso por quarta", "simbolo": "Dsus4",
+    "posicoes": [{"dedo": 1, "corda": 3, "casa": 2}, {"dedo": 2, "corda": 2, "casa": 3}, {"dedo": 3, "corda": 1, "casa": 3}],
+    "soltas": [4], "abafadas": [6, 5],
+    "modulo": 8, "dificuldade": 1,
+    "dicas": ["Resolve naturalmente para o D — bom exercício de troca de dedo 3."]
+  }
+}

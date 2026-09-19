@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background: #0b0d12;
+  color: #e7e9ee;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.corda-linha {
+  stroke: #4a5164;
+  stroke-width: 1.5;
+}
+
+.trasto-linha {
+  stroke: #333a4a;
+  stroke-width: 2;
+}
