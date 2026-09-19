@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { licaoPorId, acordePorId } from "@/lib/dados";
 import { pitchClassesDoAcorde } from "@/lib/tipos";
+import { NOMES_NOTA } from "@/lib/audio/chroma";
 import { useMicrofone } from "@/lib/audio/useMicrofone";
 import { useProgresso } from "@/lib/progresso";
 import { DiagramaAcorde } from "@/components/DiagramaAcorde";
@@ -64,6 +65,16 @@ bloqueadoRef.current = false;
 }, acertou ? 900 : 1500);
 },
 });
+
+const notasDebug = useMemo(() => {
+if (!estado.ultimoChroma) return null;
+return estado.ultimoChroma
+.map((intensidade, pc) => ({ pc, intensidade }))
+.sort((a, b) => b.intensidade - a.intensidade)
+.slice(0, 5)
+.map(({ pc, intensidade }) => `${pitchClassesAlvo.includes(pc) ? "*" : ""}${NOMES_NOTA[pc]}:${intensidade.toFixed(2)}`)
+.join(" ");
+}, [estado.ultimoChroma, pitchClassesAlvo]);
 
 useEffect(() => {
 iniciar();
@@ -142,9 +153,14 @@ Dedo {p.dedo} · corda {p.corda} · casa {p.casa}
 {veredito === "certo" ? "Acertou! ✓" : veredito === "errado" ? "Ainda não — tente de novo" : estado.ativo ? "ouvindo…" : "ligando microfone…"}
 </p>
 {modoDebug && (
-<p className="text-[10px] text-muted font-mono opacity-70">
-nível: {estado.nivelDb.toFixed(1)} dB · similaridade: {estado.ultimaSimilaridade !== null ? estado.ultimaSimilaridade.toFixed(2) : "—"} / limiar {LIMIAR_ACERTO}
+<div className="text-[10px] text-muted font-mono opacity-70 text-center space-y-0.5">
+<p>
+nível: {estado.nivelDb.toFixed(1)} dB · similaridade:{" "}
+{estado.ultimaSimilaridade !== null ? estado.ultimaSimilaridade.toFixed(2) : "—"} / limiar {LIMIAR_ACERTO}
 </p>
+<p>alvo: {pitchClassesAlvo.map((pc) => NOMES_NOTA[pc]).join(" ")}</p>
+<p>notas ouvidas (* = do acorde): {notasDebug ?? "—"}</p>
+</div>
 )}
 </>
 )}
